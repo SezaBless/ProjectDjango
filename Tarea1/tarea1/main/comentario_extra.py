@@ -6,7 +6,7 @@ skill y certificate
 ademas se agregaron comentarios a el blogdetails y se cambio la pagina de contact casi en su totalidad 
 --Génesis Rodriguez 
 
-
+Prueba de cambio
 
 
 
