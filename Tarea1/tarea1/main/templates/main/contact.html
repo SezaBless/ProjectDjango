@@ -1,0 +1,106 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+{% block content %}
+<!--La gran mayoria de este fue modificado para ser algo completamente diferente de lo original
+section de csugerencias -->
+<!--En resumen es un intento de un area para "poner blogs" pero mas como sugerencias i guess-->
+
+
+<div>
+  <div>
+    <div>
+      <div class="innerPageBannerCol">
+        <div class="container">
+          <div class="row g-4 g-md-3  align-items-center">
+            <div class="col-md-6">
+                <div class="feedback">
+  <p>Querido lector,<br>
+Deseas que se agregue otros mangas?.    
+Puedes recomendarnos algunos? 
+ 
+    <div class="clear"></div> 
+    <hr class="survey-hr"> 
+  <label for="m_3189847521540640526commentText">    Escribe tu sugerencia:</label><br/><br/>
+  <textarea cols="75" name="commentText" rows="5"></textarea><br>
+  <br>
+    <div class="clear"></div> 
+  <input style="background:#d84bae;color:#fff;padding:12px;border:0" type="submit" value="Listo!"> 
+  </form>
+  <div class="row g-4 g-md-3  align-items-end">
+    <div class="col-md-auto order-md-last">
+      <div class="bannerUserImg">
+        <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<section>
+  <div class="innerPageBannerCol">
+    <div class="container">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-6">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-md-3">Deja tu comentario</h1>
+          </div>
+        </div>
+  </div>
+
+
+<section>
+  <div class="lightBg">
+    <div class="container">
+        <form id="contactForm" method="POST" action="/contact/">
+        {% csrf_token %}
+            <label for="name">Name</label>
+            {{form.name}}
+
+            <label for="subject">Message</label>
+            {{form.message}}
+
+            <input class='btn btnPrimary' type="submit" value="Submit">
+        </form>
+    </div>
+  </div>
+</section> -->
+
+<!-- ================================
+End Content
+================================= -->
+{%endblock%}
+    

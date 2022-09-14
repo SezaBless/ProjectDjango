@@ -1,0 +1,133 @@
+{% extends 'main/base.html' %}
+{% load static %}
+
+<!-- ================================
+Start SEO blocks
+================================= -->
+{% block title %}{% endblock %}
+{% block decription %}{% endblock %}
+{% block keywords %}{% endblock %}
+<!-- ================================
+END SEO blocks
+================================= -->
+
+<!-- ================================
+Start CSS blocks
+================================= -->
+{% block extend_header %}{% endblock %}
+<!-- ================================
+END CSS blocks
+================================= -->
+
+<!-- ================================
+Start script blocks
+================================= -->
+{% block extend_footer %}{% endblock %}
+<!-- ================================
+END script blocks
+================================= -->
+
+<!-- ================================
+Start Content
+================================= -->
+
+
+<!-- Esta parte se trata de la pgina principal donde sale nuestro avatar entre otros -->
+{% block content %}
+<section>
+  <div class="bannerSection">
+    <div class="container">
+      <div class="row g-4 g-md-3  align-items-center">
+        <div class="col-md-auto order-md-last">
+          <div class="bannerUserImg">
+            <img src="{{me.userprofile.avatar.url}}" alt="{{me.first_name|title}} {{me.last_name|title}} avatar">
+          </div>
+        </div>
+        <div class="col-md">
+          <div class="bannerContent">
+            <h1 class="xlTitle pb-3">{{me.first_name|title}} <br>  {{me.userprofile.title}} </br></h1>
+            <p>{{me.userprofile.bio}}</p>
+            <div class="bannerBtnCol">
+              <div class="row">
+                <div class="col-auto">
+                  <a download href="{{me.userprofile.cv.url}}" class="btn btnPrimary">Descarga nuestra lista</a>
+                </div>
+              <div class="col-auto">
+                 
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!--Parte en la uqe se muestran los blogs-->
+<section>
+  <div class="sectionSpaceSm lightBg">
+    <div class="container">
+      <div class="row pb-3">
+        <div class="col">
+          <h4 class="smText regular">Mangas recientes</h4>
+        </div>
+        <div class="col-auto">
+          <a href="{% url 'main:blogs' %}" class="simpleLink">Más</a>
+        </div>
+      </div>
+      <div class="row g-3">
+      {% for b in blogs %}
+      {% if b.is_active %}
+        <div class="col-lg-6">
+          <div class="cardStyle1">
+            <h4 class="mdTitle cs1Title"><a href="{% url 'main:blog' slug=b.slug %}">{{b.name}}</a></h4>
+            <ul class="cardOptionCol">
+              <li>{{b.timestamp.date}}</li>
+              <li>{{b.author}}</li>
+            </ul>
+            <p>{{b.description}}</p>
+          </div>
+        </div>
+        
+        <!-- Estaba jugando con el testimonial para intentar poner imagenes con el-->
+        {% endif %}
+        {% endfor %}
+          <div class="sectionSpaceSm lightBg">
+      <div class="sectionSpaceSm lightBg">
+        <div class="container">
+          <div class="row pb-3">
+      <div class="row pb-3">
+        <div class="testimonialCol">
+          <h4 class="smText regular d-block">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* </h4>
+          <div class="testimonialSlider">
+            <div class="swiper testimonialSwiper">
+              <div class="swiper-wrapper">
+                {% for t in testimonials %}
+                {% if t.is_active %}
+                <div class="swiper-slide">
+                  <div class="testimonialCard">
+                    <div class="row align-items-end">
+                      <div class="col-xl-8">
+                        <!--<div class="tImgCol">-->
+                         <img src="{{t.thumbnail.url}}" alt="...">
+                        </div>
+                      </div>
+              
+                        {% endif %}
+                        {% endfor %}
+                        
+      </div>
+    </div>
+  </div>
+</section>
+{%endblock%} 
+<!-- ================================
+End Content
+================================= -->
