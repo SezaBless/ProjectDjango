@@ -96,7 +96,7 @@ Start Content
           </div>
         </div>
         
-        <!-- Estaba jugando con el testimonial para intentar poner imagenes con el-->
+     
         {% endif %}
         {% endfor %}
           <div class="sectionSpaceSm lightBg">
@@ -105,7 +105,7 @@ Start Content
           <div class="row pb-3">
       <div class="row pb-3">
         <div class="testimonialCol">
-          <h4 class="smText regular d-block">*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-* </h4>
+          <h4 class="smText regular d-block">Sección de comentarios </h4>
           <div class="testimonialSlider">
             <div class="swiper testimonialSwiper">
               <div class="swiper-wrapper">
@@ -115,14 +115,27 @@ Start Content
                   <div class="testimonialCard">
                     <div class="row align-items-end">
                       <div class="col-xl-8">
-                        <!--<div class="tImgCol">-->
+                        <div class="tImgCol">
                          <img src="{{t.thumbnail.url}}" alt="...">
                         </div>
                       </div>
-              
-                        {% endif %}
-                        {% endfor %}
-                        
+                     
+                        <div class="tContentCol">
+                          <h4 class="xsTitle bold">{{t.name}} 
+                          <p>{{t.quote}}</p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endif %}
+                {% endfor %}
+  
+              </div>
+              <div class="test-swiper-button-next swiper-button-next swiperBtnStyle"></div>
+              <div class="test-swiper-button-prev swiper-button-prev swiperBtnStyle"></div>
+            </div>
+
       </div>
     </div>
   </div>

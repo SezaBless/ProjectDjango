@@ -31,14 +31,13 @@ END script blocks
 Start Content
 ================================= -->
 {% block content %}
-<!--Fue reutilizado para los comentarios-->
 <section>
     <div class="innerPageBannerCol">
       <div class="container">
         <div class="row g-4 g-md-3  align-items-center">
           <div class="col-md-6">
             <div class="bannerContent">
-              <h1 class="xlTitle pb-md-3">Deja tu comentario</h1>
+              <h1 class="xlTitle pb-md-3">Ayudanos con tu blog</h1>
             </div>
           </div>
     </div>
@@ -47,18 +46,20 @@ Start Content
   <section>
     <div class="lightBg">
       <div class="container">
-          <form id="TestimonialForm" method="POST" action="{% url 'main:contact'%}" enctype = "multipart/form-data">
+          <form id="BlogForm" method="POST" action="{% url 'main:blogaddinfo'%}" enctype = "multipart/form-data">
           {% csrf_token %}
-            <label for="thumbnail">Imagen</label>
-            {{form.thumbnail}}
-              <label for="name">Nombre</label>
+            <label for="author">Author</label>
+            {{form.author}}
+              <label for="name">Name</label>
               {{form.name}}
   
-              <label for="quote">Comentario</label>
-              {{form.quote}}
-
-
-
+              <label for="description">Description</label>
+              {{form.description}}
+              <label for="body">Body</label>
+              {{form.body}}
+              <label for="image">Image</label>
+              {{form.image}}
+              
               <input class='btn btnPrimary' type="submit" value="Submit">
           </form>
       </div>
@@ -69,3 +70,4 @@ Start Content
   End Content
   ================================= -->
   {%endblock%}
+      
